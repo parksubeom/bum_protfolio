@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  /* 글로벌 스타일을 정의합니다. */
 
   body {
   margin: 0;
@@ -20,10 +19,10 @@ const GlobalStyles = createGlobalStyle`
   --main-color: #7683d9;
   --sub-color: #d8a0fe;
 
-  --main-bg-color: #0e131d;
+  --main-bg-color: #f0ffff;
   --sub-bg-color: rgb(23, 33, 48);
 
-  --text-color: #bdbdbd;
+  --text-color: #696969;
   --main-text-color: #787878;
   --sub-text-color: #525252;
 
@@ -182,25 +181,24 @@ table {
   border-spacing: 0;
 }
 
- a {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
+a {
+color: #fff;
+text-decoration: none;
+outline: none;
 }
- a:hover,
+a:hover,
 a:active {
-  text-decoration: none;
-  color: #fff;
-  background-color: #f59000;
+text-decoration: none;
+color: #fff;
+background-color: #f59000;
 }
 
 button {
-  box-shadow: none;
-  padding: 0;
-  cursor: pointer;
+box-shadow: none;
+padding: 0;
+ cursor: pointer;
 }
 
-  /* 추가적인 글로벌 스타일을 정의할 수 있습니다. */
 `;
 
 export default GlobalStyles;
