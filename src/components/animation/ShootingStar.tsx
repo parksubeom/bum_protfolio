@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import '../../style/star.css';
 
 function ShootingStar() {
   return (
-    <TopContainer>
+    <div className="top">
       <div className="shooting-stars">
         <div className="shooting-star"></div>
         <div className="shooting-star shooting-star--mid"></div>
@@ -15,14 +15,8 @@ function ShootingStar() {
         <div className="shooting-star shooting-star--meh6"></div>
         <div className="shooting-star shooting-star--meh7"></div>
       </div>
-    </TopContainer>
+    </div>
   );
 }
 
-const TopContainer = styled.div`
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-`;
 export default ShootingStar;
