@@ -6,6 +6,7 @@ import { usePageNumberState } from '../state/atoms';
 import React from 'react';
 import MainInfo from '../components/info/MainInfo';
 import Profile from '../components/info/Profile';
+import ShootingStar from '../components/animation/ShootingStar';
 
 type BubbleEffectProps = {
   top?: string;
@@ -78,7 +79,7 @@ const PortfolioPage: React.FC = () => {
           <BubbleEffect top="500px" left="-150px" second="5"></BubbleEffect>
           <BubbleEffect top="800px" left="100px" w="400" h="400"></BubbleEffect>
         </div>
-
+        <ShootingStar />
         <Routes>
           <Route path="*" element={<MainInfo />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
