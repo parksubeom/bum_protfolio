@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Stack from './Stack';
+import Stack from './stack/Stack';
 import Career from './Career';
 import Introduction from './Introdution';
 

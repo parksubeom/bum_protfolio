@@ -52,7 +52,8 @@ export const skillsData: SkillsData[] = [
     index: 4,
     name: 'React',
     icon: { component: TbBrandReact, color: '#61dafb' },
-    contents: 'React를 사용하여 상태관리를 통해 재사용이 가능한 컴포넌트 기반의 웹 애플리케이션을 구축할 수 있습니다.',
+    contents:
+      'React를 사용하여 상태관리를 통해 재사용이 가능한 컴포넌트 기반의 웹 애플리케이션을 구축할 수 있습니다. 커스텀 훅 패턴에 관심이 많습니다.',
     color: '#61dafb',
     gauge: 85,
   },
