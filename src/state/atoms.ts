@@ -1,11 +1,10 @@
 import { atom } from 'recoil';
 import { FaHtml5 } from 'react-icons/fa';
-import { ReactElement } from 'react';
+
 type IconType = {
-  component: React.FC<{ color: string }>; // FaHtml5와 같은 React 컴포넌트 타입으로 변경
+  component: React.ComponentType<{ color: string }>;
   color: string;
 };
-
 type StackData = {
   index: number;
   name: string;

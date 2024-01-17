@@ -16,8 +16,8 @@ const GlobalStyles = createGlobalStyle`
 }
 
 :root {
-  --main-color: #7683d9;
-  --sub-color: #d8a0fe;
+  --main-color: #d8e33d;
+  --sub-color: #f0ab16;
 
   --main-bg-color: #f0ffff;
   --sub-bg-color: rgb(23, 33, 48);
@@ -26,8 +26,8 @@ const GlobalStyles = createGlobalStyle`
   --main-text-color: #787878;
   --sub-text-color: #525252;
 
-  --btn-bg-color: #201e39;
-  --btn-st-color: #8f8ae2;
+  --btn-bg-color: #FF7F50;
+  --btn-st-color: #FF9614;
 }
 
 /**수평,수직 중앙정렬**/

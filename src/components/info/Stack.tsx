@@ -1,28 +1,19 @@
 import styled from 'styled-components';
-
-import { stackData } from '../../data/stackData';
-import { toolData } from '../../data/toolData';
-import { studyingData } from '../../data/learningData';
+import * as React from 'react';
+import { skillsData } from '../../data/skillsData';
+import { deploymentData } from '../../data/deploymentData';
+import { communicationData } from '../../data/communicationData';
 import { useState } from 'react';
 
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { useStackDataState } from '../../state/atoms';
 
-interface handleStackProps {
-  index: number;
-  name: string;
-  icon: JSX.Element;
-  contents: string;
-  color: string;
-  gauge: number;
-}
-
-function Stack() {
-  const [, setClickStack] = useRecoilState(useStackDataState);
-
+const Stack: React.FC = () => {
+  const setClickStack = useSetRecoilState(useStackDataState);
   const [indexNum, setIndexNum] = useState(1);
 
   const handleStack = (index: number, data: any) => {
+    console.log(data);
     setIndexNum(index);
     setClickStack(data);
   };
@@ -30,46 +21,66 @@ function Stack() {
   return (
     <div>
       <StackBox>
-        <h2>Stack</h2>
+        <h2>Skills</h2>
         <StackContent className="flex-h-center">
-          {stackData.map(item => (
+          {skillsData.map(item => (
             <li
               key={item.index}
               className={`skill-icon ${indexNum === item.index && `icon-click`}`}
               onClick={() => {
                 handleStack(item.index, item);
               }}>
-              {item.icon} {item.name}
+              {
+                React.createElement(item.icon.component, {
+                  color: item.icon.color,
+                }) as React.ReactElement
+              }{' '}
+              {item.name}
             </li>
           ))}
         </StackContent>
-        <h2>Tools </h2>
+        <h2>Deployment </h2>
 
         <StackContent className="flex-h-center">
-          {toolData.map(item => (
+          {deploymentData.map(item => (
             <li
               key={item.index}
               className={`skill-icon ${indexNum === item.index && `icon-click`}`}
               onClick={() => {
                 handleStack(item.index, item);
               }}>
-              {item.icon} {item.name}
+              {
+                React.createElement(item.icon.component, {
+                  color: item.icon.color,
+                }) as React.ReactElement
+              }{' '}
+              {item.name}
             </li>
           ))}
         </StackContent>
-        <h2>Studying</h2>
+        <h2>Communication</h2>
 
         <StackContent className="flex-h-center">
-          {studyingData.map(item => (
-            <li key={item.index} className="skill-icon">
-              {item.icon} {item.name}
+          {communicationData.map(item => (
+            <li
+              key={item.index}
+              className={`skill-icon ${indexNum === item.index && `icon-click`}`}
+              onClick={() => {
+                handleStack(item.index, item);
+              }}>
+              {
+                React.createElement(item.icon.component, {
+                  color: item.icon.color,
+                }) as React.ReactElement
+              }{' '}
+              {item.name}
             </li>
           ))}
         </StackContent>
       </StackBox>
     </div>
   );
-}
+};
 
 export default Stack;
 
@@ -97,8 +108,8 @@ const StackContent = styled.ul`
     align-items: center;
     font-family: 'kopubB';
     font-size: 14px;
-    color: #4c4c4c;
-    border: 1px solid #0c0c0c;
+    color: #898888;
+    border: 1px solid #898888;
     background-color: #f9f7e4;
     padding: 0px 15px;
     height: 25px;
@@ -112,15 +123,15 @@ const StackContent = styled.ul`
   }
 
   .skill-icon:hover {
-    background-color: var(--btn-bg-color);
-    color: var(--btn-st-color);
+    background-color: #f8f0a8;
+    color: #252525;
     cursor: pointer;
   }
 
   .icon-click {
-    border: 1px solid var(--btn-st-color);
-    background-color: var(--btn-bg-color);
-    color: var(--btn-st-color);
+    border: px solid #252525;
+    background-color: #f8f0a8;
+    color: #252525;
     cursor: pointer;
   }
 `;

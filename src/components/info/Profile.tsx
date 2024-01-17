@@ -2,20 +2,24 @@ import styled from 'styled-components';
 
 import Stack from './Stack';
 import Career from './Career';
+import Introduction from './Introdution';
 
-function Profile() {
+const Profile: React.FC = () => {
   return (
     <ProfileSection className="flex-all-center">
       <aside>
-        <h1>김주비</h1>
+        <h1>박수범</h1>
         <Career />
       </aside>
       <aside>
         <Stack />
       </aside>
+      <aside>
+        <Introduction />
+      </aside>
     </ProfileSection>
   );
-}
+};
 
 export default Profile;
 

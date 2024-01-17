@@ -1,4 +1,9 @@
-export const navBtnData = [
+type StackData = {
+  name: string;
+  number: number;
+  link: string;
+};
+export const navBtnData: StackData[] = [
   {
     name: 'MAIN PAGE',
     number: 1,

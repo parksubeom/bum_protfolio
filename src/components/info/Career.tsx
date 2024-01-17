@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function Career() {
+const Career: React.FC = () => {
   return (
     <CareerSection>
       <ProfileBox>
@@ -9,35 +9,33 @@ function Career() {
             <tr>
               <td>전화번호</td>
               <td>
-                <span className="comp-duty">+82 010.6818.0600</span>
+                <span className="comp-duty">+82 010-8109-0731</span>
               </td>
             </tr>
             <tr>
               <td>github</td>
               <td>
                 <span className="comp-duty">
-                  <a href="https://github.com/parksubeom">https://github.com/parksubeom</a>
+                  <a target="_blank" href="https://github.com/parksubeom">
+                    https://github.com/parksubeom
+                  </a>
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td>blog</td>
+              <td>
+                <span className="comp-duty">
+                  <a target="_blank" href="https://sooknise.tistory.com/">
+                    https://sooknise.tistory.com
+                  </a>
                 </span>
               </td>
             </tr>
             <tr>
               <td>Email</td>
               <td>
-                <span className="comp-duty">kimjubee@gmail.com</span>
-              </td>
-            </tr>
-            <tr>
-              <td>자격증</td>
-              <td>
-                <span className="comp-duty">
-                  웹디자인기능사
-                  <br />
-                  <br />
-                  GTQ 1급
-                  <br />
-                  <br />
-                  2종보통 운전면허
-                </span>
+                <span className="comp-duty">sooknise@naver.com</span>
               </td>
             </tr>
           </tbody>
@@ -48,38 +46,10 @@ function Career() {
         <table>
           <tbody>
             <tr>
-              <td>13.02</td>
+              <td>23.09 ~ 24.01</td>
               <td>
-                <span className="comp-name">울산 생활과학 고등학교</span>
-                <span className="comp-duty"> 졸업</span>
-              </td>
-            </tr>
-            <tr>
-              <td>16.03 ~ 17.05</td>
-              <td>
-                <span className="comp-name">우진통상(TROIKA)</span>
-                <span className="comp-duty"> 웹 퍼블리셔</span>
-              </td>
-            </tr>
-            <tr>
-              <td>17.07 ~ 20.04</td>
-              <td>
-                <span className="comp-name">대광산업</span>
-                <span className="comp-duty">회계/관리</span>
-              </td>
-            </tr>
-            <tr>
-              <td>20.04 ~ 22.01</td>
-              <td>
-                <span className="comp-name">키다리스튜디오</span>
-                <span className="comp-duty">웹툰작가</span>
-              </td>
-            </tr>
-            <tr>
-              <td>22.02 ~ 22.11</td>
-              <td>
-                <span className="comp-name">별하길동무</span>
-                <span className="comp-duty"> 웹 디자이너</span>
+                <span className="comp-name">열매컴퍼니 사내벤쳐기업 MOA</span>
+                <span className="comp-duty">ICT 인턴 (FE직무)</span>
               </td>
             </tr>
             <tr>
@@ -89,12 +59,19 @@ function Career() {
                 <span className="comp-duty"> 수료</span>
               </td>
             </tr>
+            <tr>
+              <td>15.03 ~ </td>
+              <td>
+                <span className="comp-name">전남대학교 멀티미디어학과</span>
+                <span className="comp-duty"> 졸업예정</span>
+              </td>
+            </tr>
           </tbody>
         </table>
       </TimeLine>
     </CareerSection>
   );
-}
+};
 
 export default Career;
 
@@ -133,6 +110,7 @@ const TimeLine = styled.div`
       .comp-duty {
         margin-left: 10px;
         font-size: 15px;
+        font-weight: bold;
 
         > a {
           color: var(--text-color);
