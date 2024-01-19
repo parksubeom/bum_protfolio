@@ -6,6 +6,11 @@ import { usePageNumberState } from '../state/atoms';
 import React from 'react';
 import MainInfo from '../components/info/MainInfo';
 import Profile from '../components/info/Profile';
+import SideBar from '../components/sidebar/SideBar';
+import AniSchool from '../components/project/AniSchool';
+import PortFolio from '../components/project/PortFolio';
+import Ticat from '../components/project/Ticat';
+import Uncover from '../components/project/Uncover';
 import ShootingStar from '../components/animation/ShootingStar';
 
 type BubbleEffectProps = {
@@ -72,17 +77,21 @@ const PortfolioPage: React.FC = () => {
   return (
     <>
       <MainSection className="flex-h-center column">
-        <p>메인페이지</p>
         <div className="opacity">
           <BubbleEffect top="-250px" right="50px"></BubbleEffect>
           <BubbleEffect top="50px" right="-200px" second="7"></BubbleEffect>
           <BubbleEffect top="500px" left="-150px" second="5"></BubbleEffect>
           <BubbleEffect top="800px" left="100px" w="400" h="400"></BubbleEffect>
         </div>
+        <SideBar />
         <ShootingStar />
         <Routes>
           <Route path="*" element={<MainInfo />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/ticat" element={<Ticat />}></Route>
+          <Route path="/uncover" element={<Uncover />}></Route>
+          <Route path="/anischool" element={<AniSchool />}></Route>
+          <Route path="/endpage" element={<PortFolio />}></Route>
         </Routes>
       </MainSection>
     </>
@@ -114,7 +123,7 @@ const BubbleEffect: React.FC<BubbleEffectProps> = styled.div`
   position: absolute;
   width: ${props => props.w || '500'}px;
   height: ${props => props.h || '500'}px;
-  background-color: rgba(252, 22, 14, 0.05);
+  background-color: rgba(202, 100, 14, 0.1);
   top: ${props => props.top || 'auto'};
   right: ${props => props.right || 'auto'};
   left: ${props => props.left || 'auto'};

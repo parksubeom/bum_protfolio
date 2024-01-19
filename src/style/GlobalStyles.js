@@ -2,7 +2,33 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 
+@font-face {
+  font-family: "KopubM";
+  src: url("./font/kopubworld.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "KopubL";
+  src: url("./font/KoPubWorld\ Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "KopubB";
+  src: url("./font/KoPubWorld\ B.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lime";
+  src: url("./font/Lime.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "촵";
+  src: url("./fonts/chab.otf") format("truetype");
+}
+
   body {
+    
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -16,15 +42,15 @@ const GlobalStyles = createGlobalStyle`
 }
 
 :root {
-  --main-color: #d8e33d;
-  --sub-color: #f0ab16;
+  --main-color: #D18237;
+  --sub-color: #D66C44;
 
-  --main-bg-color: #f0ffff;
-  --sub-bg-color: rgb(23, 33, 48);
+  --main-bg-color: #324856;
+  --sub-bg-color: #4A746A;
 
-  --text-color: #696969;
-  --main-text-color: #787878;
-  --sub-text-color: #525252;
+  --text-color: #F2F4EF;
+  --main-text-color: #F2F4EF;
+  --sub-text-color: #C2E3F4;
 
   --btn-bg-color: #FF7F50;
   --btn-st-color: #FF9614;

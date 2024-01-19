@@ -3,7 +3,7 @@ type StackData = {
   number: number;
   link: string;
 };
-export const navBtnData: StackData[] = [
+export const navPramsData: StackData[] = [
   {
     name: 'MAIN PAGE',
     number: 1,
