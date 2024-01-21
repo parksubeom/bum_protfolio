@@ -105,12 +105,13 @@ const TimeLine = styled.div`
       .comp-name {
         color: var(--text-color);
         font-size: 15px;
+        font-weight: 600;
       }
 
       .comp-duty {
+        color: #bcbaba;
         margin-left: 10px;
         font-size: 15px;
-        font-weight: bold;
 
         > a {
           color: var(--text-color);

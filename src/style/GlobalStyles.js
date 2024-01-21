@@ -1,30 +1,35 @@
 import { createGlobalStyle } from 'styled-components';
+import chab from './font/chab.otf';
+import Lime from './font/210lime.otf';
+import KopubB from './font/KoPubWorld B.ttf';
+import KopubL from './font/KoPubWorld B.ttf';
+import KopubM from './font/KoPubWorld Light.ttf';
 
 const GlobalStyles = createGlobalStyle`
 
 @font-face {
   font-family: "KopubM";
-  src: url("./font/kopubworld.ttf") format("truetype");
+  src: url(${KopubM}) format("truetype");
 }
 
 @font-face {
   font-family: "KopubL";
-  src: url("./font/KoPubWorld\ Light.ttf") format("truetype");
+  src: url(${KopubL}) format("truetype");
 }
 
 @font-face {
   font-family: "KopubB";
-  src: url("./font/KoPubWorld\ B.ttf") format("truetype");
+  src: url(${KopubB}) format("truetype");
 }
 
 @font-face {
   font-family: "Lime";
-  src: url("./font/Lime.ttf") format("truetype");
+  src: url(${Lime}) format("truetype");
 }
 
 @font-face {
   font-family: "촵";
-  src: url("./fonts/chab.otf") format("truetype");
+  src: url(${chab}) format("truetype");
 }
 
   body {
