@@ -9,7 +9,7 @@ const Career: React.FC = () => {
             <tr>
               <td>전화번호</td>
               <td>
-                <span className="comp-duty">+82 010-8109-0731</span>
+                <span className="comp-name">+82 010-8109-0731</span>
               </td>
             </tr>
             <tr>
@@ -17,7 +17,7 @@ const Career: React.FC = () => {
               <td>
                 <span className="comp-duty">
                   <a target="_blank" href="https://github.com/parksubeom">
-                    https://github.com/parksubeom
+                    <span className="comp-name">깃허브 링크</span>
                   </a>
                 </span>
               </td>
@@ -27,7 +27,7 @@ const Career: React.FC = () => {
               <td>
                 <span className="comp-duty">
                   <a target="_blank" href="https://sooknise.tistory.com/">
-                    https://sooknise.tistory.com
+                    <span className="comp-name">블로그 링크</span>
                   </a>
                 </span>
               </td>
@@ -35,7 +35,7 @@ const Career: React.FC = () => {
             <tr>
               <td>Email</td>
               <td>
-                <span className="comp-duty">sooknise@naver.com</span>
+                <span className="comp-name">sooknise@naver.com</span>
               </td>
             </tr>
           </tbody>

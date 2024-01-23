@@ -7,10 +7,10 @@ import React from 'react';
 import MainInfo from '../components/info/MainInfo';
 import Profile from '../components/info/Profile';
 import SideBar from '../components/sidebar/SideBar';
-import AniSchool from '../components/project/AniSchool';
-import PortFolio from '../components/project/PortFolio';
-import Ticat from '../components/project/Ticat';
-import Uncover from '../components/project/Uncover';
+import AniSchool from '../components/project/anischool/AniSchool';
+import Ticat from '../components/project/ticat/Ticat';
+import TicatReadme from '../components/project/ticat/Readme';
+import Uncover from '../components/project/uncover/Uncover';
 import ShootingStar from '../components/animation/ShootingStar';
 
 type BubbleEffectProps = {
@@ -58,22 +58,6 @@ const PortfolioPage: React.FC = () => {
     };
   }, [updatingScroll]);
 
-  useEffect(() => {
-    // scrollDirection 상태에 따라 페이지 이동 처리
-    if (pageNumber === 1) {
-      navigate('/');
-    } else if (pageNumber === 2) {
-      navigate('/profile');
-    } else if (pageNumber === 3) {
-      navigate('/ticat');
-    } else if (pageNumber === 4) {
-      navigate('/uncover');
-    } else if (pageNumber === 5) {
-      navigate('/anischool');
-    } else if (pageNumber === 6) {
-      navigate('/endpage');
-    }
-  }, [pageNumber, navigate]);
   return (
     <>
       <MainSection className="flex-h-center column">
@@ -89,9 +73,9 @@ const PortfolioPage: React.FC = () => {
           <Route path="*" element={<MainInfo />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
           <Route path="/ticat" element={<Ticat />}></Route>
+          <Route path="/ticat/readme" element={<TicatReadme />}></Route>
           <Route path="/uncover" element={<Uncover />}></Route>
           <Route path="/anischool" element={<AniSchool />}></Route>
-          <Route path="/endpage" element={<PortFolio />}></Route>
         </Routes>
       </MainSection>
     </>

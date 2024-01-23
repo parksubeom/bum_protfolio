@@ -1,30 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
-import SliderShow from '../slide/SliderShow';
-import { uncoverBtn } from '../../data/urlData';
-import { UncoverimageData } from '../../data/imgData';
+import SliderShow from '../../slide/SliderShow';
+import { anischoolBtn } from '../../../data/urlData';
+import { AniSchoolimageData } from '../../../data/imgData';
 
-const Uncover: React.FC = () => {
+const AniSchool: React.FC = () => {
   const handleExternalLink = (url: string) => {
     window.open(url, '_blank');
   };
 
   return (
-    <UncoverSection className="flex-all-center">
+    <AniSchoolSection className="flex-all-center">
       <div className="project-image">
-        <SliderShow images={UncoverimageData} />
+        <SliderShow images={AniSchoolimageData} />
       </div>
       <div className="project-info flex-v-center column">
-        <span className="pj-num">PROJECT 02</span>
-        <span className="pj-name">노 카피라이트 음원 스트리밍 서비스 : Uncover</span>
+        <span className="pj-num">PROJECT 03</span>
+        <span className="pj-name">귀여운 동물 프로필 생성기 : AniSchool</span>
         <p>
-          - 🎧No Copyright 뮤직 스트리밍 사이트 - UNCOVER : 이런 음악은 처음이지? - 유튜브 편집을 할 때 마다 저작권 없는
-          음원을 찾는 과정이 너무 번거롭고 귀찮았는데, 그러한 불편함을 개선하고 더불어 세상에 알려지지 않은 숨겨진
-          음악들을 알리자 라는 취지로 개발했습니다. - 무료라는 장점과 “피팅룸” 이라는 믹싱페이지에서 영상과 음원의 핏이
-          맞는지 대조해 볼 수 있는 차별점을 뒀습니다
+          프로필 업로드에 얼굴을 공개하기 꺼려워하는 사람들을 위한 서비스로, 귀여운 동물 이미지를 생성하는
+          프로젝트입니다. 프론트엔드 개발과 캐릭터 디자인 기획에 참여하여, 랜덤 요소 적용, 레어 요소 설정, 이미지 저장
+          등의 기능을 구현했습니다. 주요 개발과정은 블로그에 공유되어 있으며, 프로젝트를 통해 SEO를 제외한 전반적인 성능
+          최적화를 진행했습니다. 코드 최적화와 리소스 최적화를 통해 라이트하우스 성능 개선을 달성하고, 사용자 중심의
+          디자인을 강조하며 프로젝트 성과로는 200명 이상의 실제 사용자 경험과 37건의 피드백, 유지보수 경험을 얻었습니다.
+          특히, 사용자 입장에서의 개발 고민을 통해 팀원과의 커뮤니케이션과 고객 니즈 파악의 중요성을 깨달았습니다.
         </p>
         <div>
-          {uncoverBtn.map((url, idx) => (
+          {anischoolBtn.map((url, idx) => (
             <button
               key={idx}
               onClick={() => {
@@ -35,13 +37,13 @@ const Uncover: React.FC = () => {
           ))}
         </div>
       </div>
-    </UncoverSection>
+    </AniSchoolSection>
   );
 };
 
-export default Uncover;
+export default AniSchool;
 
-const UncoverSection = styled.div`
+const AniSchoolSection = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1;

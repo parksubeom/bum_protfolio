@@ -51,11 +51,11 @@ export const anischoolBtn: ButtonData[] = [
   {
     name: 'Web site',
     icon: { component: FaPlay },
-    url: 'https://parksubeom.github.io/Project_RetroAnimal_Generator/',
+    url: 'https://d12v3b538m291m.cloudfront.net',
   },
   {
     name: 'Git Hub',
     icon: { component: FaGithub },
-    url: 'https://github.com/mscojl24',
+    url: 'https://github.com/parksubeom/Ani_School',
   },
 ];

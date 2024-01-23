@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { navPramsData } from '../../data/navPramsData';
 import { usePageNumberState } from '../../state/atoms';
@@ -27,14 +28,19 @@ function SideBar() {
 
     if (pageNumber === 1) {
       setSideText('MAINPAGE');
+      navigate('/', { replace: true });
     } else if (pageNumber === 2) {
       setSideText('PROFILE');
+      navigate('/profile', { replace: true });
     } else if (pageNumber === 3) {
       setSideText('TICAT');
+      navigate('/ticat', { replace: true });
     } else if (pageNumber === 4) {
       setSideText('UNCOVER');
+      navigate('/uncover', { replace: true });
     } else if (pageNumber === 5) {
       setSideText('ANISHOOL');
+      navigate('/anischool', { replace: true });
     } else if (pageNumber === 6) {
       setSideText('ENDPAGE');
     }
