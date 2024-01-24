@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useRef } from 'react';
 import { navPramsData } from '../../data/navPramsData';
 import { usePageNumberState } from '../../state/atoms';
 import { useRecoilState } from 'recoil';
 
 function SideBar() {
+  const location = useLocation();
   const navigate = useNavigate();
   const [pageNumber, setPageNumber] = useRecoilState(usePageNumberState);
   const [sideNum, setSideNum] = useState(1);
@@ -23,10 +24,13 @@ function SideBar() {
   };
 
   useEffect(() => {
+    console.log(location.pathname);
     setSideNum(pageNumber);
     setSideText(sideText);
-
-    if (pageNumber === 1) {
+    if (pageNumber === 0) {
+      setSideText(`${location.pathname}`.replace('/', ''));
+      navigate(`${location.pathname}`, { replace: true });
+    } else if (pageNumber === 1) {
       setSideText('MAINPAGE');
       navigate('/', { replace: true });
     } else if (pageNumber === 2) {

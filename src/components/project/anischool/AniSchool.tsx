@@ -1,14 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import SliderShow from '../../slide/SliderShow';
 import { anischoolBtn } from '../../../data/urlData';
 import { AniSchoolimageData } from '../../../data/imgData';
 
 const AniSchool: React.FC = () => {
+  const navigate = useNavigate();
   const handleExternalLink = (url: string) => {
     window.open(url, '_blank');
   };
 
+  const readmeBtnHandle = () => {
+    console.log('눌림');
+    navigate('/anischool/readme');
+  };
   return (
     <AniSchoolSection className="flex-all-center">
       <div className="project-image">
@@ -35,6 +41,9 @@ const AniSchool: React.FC = () => {
               {React.createElement(url.icon.component) as React.ReactElement} {url.name}
             </button>
           ))}
+        </div>
+        <div>
+          <button onClick={readmeBtnHandle}>자세히보기</button>
         </div>
       </div>
     </AniSchoolSection>
@@ -93,11 +102,11 @@ const AniSchoolSection = styled.div`
     font-family: 'KopubB';
     width: 65%;
     margin: 40px 0px 50px 0px;
-    color: var(--main-text-color);
+    color: var(--main-texㅉt-color);
   }
 
   button {
-    margin: 0px 15px 0px 0px;
+    margin: 15px 15px 0px 0px;
     font-family: 'KopubB';
     font-size: 17px;
     /* color: var(--btn-st-color);

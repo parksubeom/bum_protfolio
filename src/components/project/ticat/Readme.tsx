@@ -7,7 +7,7 @@ const Readme: React.FC = () => {
     <Container>
       <Section>
         <Title>프로젝트 정보</Title>
-        <Content>프로젝트에 대한 간략한 설명을 여기에 작성합니다.</Content>
+        <Content>티캣이다.</Content>
       </Section>
       <Section>
         <Title>개발한 이유</Title>
@@ -44,11 +44,11 @@ const Section = styled.section`
 
 const Title = styled.h2`
   font-size: 24px;
-  color: #333;
+  color: #faf8f8;
   margin-bottom: 10px;
 `;
 
 const Content = styled.p`
   font-size: 16px;
-  color: #666;
+  color: #fee2e2;
 `;

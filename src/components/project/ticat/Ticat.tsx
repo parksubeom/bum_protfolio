@@ -1,10 +1,10 @@
 import React from 'react';
-import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import SliderShow from '../../slide/SliderShow';
 import { ticatBtn } from '../../../data/urlData';
 import { TicatimageData } from '../../../data/imgData';
-import TicatReadme from './Readme';
+
 const Ticat: React.FC = () => {
   const navigate = useNavigate();
 
@@ -13,7 +13,8 @@ const Ticat: React.FC = () => {
   };
 
   const readmeBtnHandle = () => {
-    window.open('http://localhost:3000/uncover');
+    console.log('눌림');
+    navigate('/ticat/readme');
   };
 
   return (

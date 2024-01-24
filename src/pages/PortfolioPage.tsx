@@ -8,9 +8,11 @@ import MainInfo from '../components/info/MainInfo';
 import Profile from '../components/info/Profile';
 import SideBar from '../components/sidebar/SideBar';
 import AniSchool from '../components/project/anischool/AniSchool';
+import AniSchoolReadme from '../components/project/anischool/Readme';
 import Ticat from '../components/project/ticat/Ticat';
 import TicatReadme from '../components/project/ticat/Readme';
 import Uncover from '../components/project/uncover/Uncover';
+import UncoverReadme from '../components/project/uncover/Readme';
 import ShootingStar from '../components/animation/ShootingStar';
 
 type BubbleEffectProps = {
@@ -75,7 +77,9 @@ const PortfolioPage: React.FC = () => {
           <Route path="/ticat" element={<Ticat />}></Route>
           <Route path="/ticat/readme" element={<TicatReadme />}></Route>
           <Route path="/uncover" element={<Uncover />}></Route>
+          <Route path="/uncover/readme" element={<UncoverReadme />}></Route>
           <Route path="/anischool" element={<AniSchool />}></Route>
+          <Route path="/anischool/readme" element={<AniSchoolReadme />}></Route>
         </Routes>
       </MainSection>
     </>

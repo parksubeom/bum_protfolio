@@ -1,12 +1,19 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import SliderShow from '../../slide/SliderShow';
 import { uncoverBtn } from '../../../data/urlData';
 import { UncoverimageData } from '../../../data/imgData';
 
 const Uncover: React.FC = () => {
+  const navigate = useNavigate();
   const handleExternalLink = (url: string) => {
     window.open(url, '_blank');
+  };
+
+  const readmeBtnHandle = () => {
+    console.log('눌림');
+    navigate('/uncover/readme');
   };
 
   return (
@@ -33,6 +40,9 @@ const Uncover: React.FC = () => {
               {React.createElement(url.icon.component) as React.ReactElement} {url.name}
             </button>
           ))}
+        </div>
+        <div>
+          <button onClick={readmeBtnHandle}>자세히보기</button>
         </div>
       </div>
     </UncoverSection>
@@ -95,7 +105,7 @@ const UncoverSection = styled.div`
   }
 
   button {
-    margin: 0px 15px 0px 0px;
+    margin: 15px 15px 0px 0px;
     font-family: 'KopubB';
     font-size: 17px;
     /* color: var(--btn-st-color);
