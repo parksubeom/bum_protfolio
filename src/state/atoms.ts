@@ -16,7 +16,7 @@ type StackData = {
 
 export const usePageNumberState = atom({
   key: 'pageNumber',
-  default: 0,
+  default: 1,
 });
 
 export const useStackDataState = atom<StackData>({

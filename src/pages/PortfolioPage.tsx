@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { usePageNumberState } from '../state/atoms';
@@ -26,8 +26,8 @@ type BubbleEffectProps = {
 
 const PortfolioPage: React.FC = () => {
   const [updatingScroll, setUpdatingScroll] = useState(false);
-  const [pageNumber, setPageNumber] = useRecoilState(usePageNumberState);
-  const navigate = useNavigate();
+  const [_, setPageNumber] = useRecoilState(usePageNumberState);
+  const location = useLocation();
 
   useEffect(() => {
     // 스크롤 이벤트 처리 함수
@@ -69,7 +69,7 @@ const PortfolioPage: React.FC = () => {
           <BubbleEffect top="500px" left="-150px" second="5"></BubbleEffect>
           <BubbleEffect top="800px" left="100px" w="400" h="400"></BubbleEffect>
         </div>
-        <SideBar />
+        {!location.pathname.split('/').includes('readme') && <SideBar />}
         <ShootingStar />
         <Routes>
           <Route path="*" element={<MainInfo />}></Route>
@@ -90,7 +90,7 @@ const MainSection = styled.section`
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   color: var(--main-text-color);
   background-color: var(--main-bg-color);
   color: #fff;

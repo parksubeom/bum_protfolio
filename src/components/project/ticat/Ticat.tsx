@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SliderShow from '../../slide/SliderShow';
 import { ticatBtn } from '../../../data/urlData';
 import { TicatimageData } from '../../../data/imgData';
+import PublicButton from '../../../common/Button';
 
 const Ticat: React.FC = () => {
   const navigate = useNavigate();
@@ -13,7 +14,6 @@ const Ticat: React.FC = () => {
   };
 
   const readmeBtnHandle = () => {
-    console.log('눌림');
     navigate('/ticat/readme');
   };
 
@@ -32,17 +32,19 @@ const Ticat: React.FC = () => {
         </p>
         <div>
           {ticatBtn.map((url, idx) => (
-            <button
+            <PublicButton
               key={idx}
               onClick={() => {
                 handleExternalLink(url.url);
               }}>
               {React.createElement(url.icon.component) as React.ReactElement} {url.name}
-            </button>
+            </PublicButton>
           ))}
         </div>
         <div>
-          <button onClick={readmeBtnHandle}>자세히보기</button>
+          <PublicButton bgcolor="#222" hover="#222" color="white" onClick={readmeBtnHandle}>
+            자세히보기
+          </PublicButton>
         </div>
       </div>
     </TicatSection>
@@ -53,7 +55,7 @@ export default Ticat;
 
 const TicatSection = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
   line-height: 160%;
 
@@ -102,30 +104,6 @@ const TicatSection = styled.div`
     width: 65%;
     margin: 40px 0px 50px 0px;
     color: var(--main-text-color);
-  }
-
-  button {
-    margin: 15px 15px 0px 0px;
-    font-family: 'KopubB';
-    font-size: 17px;
-    /* color: var(--btn-st-color);
-        border: 1px solid rgb(143, 138, 226, 0.5);
-        background-color: var(--btn-bg-color); */
-    color: #4c4c4c;
-    border: none;
-    background-color: #f1c32b;
-    padding: 7px 25px;
-    border-radius: 5px;
-    transition: 0.3s all ease-in-out;
-    > *:nth-child(1) {
-      margin-right: 5px;
-      transform: translateY(3px);
-    }
-  }
-
-  button:hover {
-    border: 1px solid rgb(143, 138, 226, 0.5);
-    background-color: var(--btn-bg-color);
   }
 
   ul {

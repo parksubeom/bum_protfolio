@@ -7,12 +7,12 @@ import { AniSchoolimageData } from '../../../data/imgData';
 
 const AniSchool: React.FC = () => {
   const navigate = useNavigate();
+
   const handleExternalLink = (url: string) => {
     window.open(url, '_blank');
   };
 
   const readmeBtnHandle = () => {
-    console.log('눌림');
     navigate('/anischool/readme');
   };
   return (
@@ -54,7 +54,7 @@ export default AniSchool;
 
 const AniSchoolSection = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
   line-height: 160%;
 

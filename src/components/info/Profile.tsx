@@ -26,7 +26,7 @@ export default Profile;
 const ProfileSection = styled.article`
   z-index: 1;
   width: 80%;
-  height: 100%;
+  height: 100vh;
   margin-right: 100px;
   opacity: 0;
   color: var(--main-text-color);

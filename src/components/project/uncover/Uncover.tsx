@@ -12,7 +12,6 @@ const Uncover: React.FC = () => {
   };
 
   const readmeBtnHandle = () => {
-    console.log('눌림');
     navigate('/uncover/readme');
   };
 
@@ -53,7 +52,7 @@ export default Uncover;
 
 const UncoverSection = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 1;
   line-height: 160%;
 

@@ -13,7 +13,7 @@ type ButtonData = {
 
 export const uncoverBtn: ButtonData[] = [
   {
-    name: 'Web site',
+    name: 'Service Link',
     icon: { component: FaPlay },
     url: 'https://uncoversound.com/',
   },
@@ -31,7 +31,7 @@ export const uncoverBtn: ButtonData[] = [
 
 export const ticatBtn: ButtonData[] = [
   {
-    name: 'Web site',
+    name: 'Service Link',
     icon: { component: FaPlay },
     url: 'https://d99pqcn6hzkdg.cloudfront.net/',
   },
@@ -49,7 +49,7 @@ export const ticatBtn: ButtonData[] = [
 
 export const anischoolBtn: ButtonData[] = [
   {
-    name: 'Web site',
+    name: 'Service Link',
     icon: { component: FaPlay },
     url: 'https://d12v3b538m291m.cloudfront.net',
   },

@@ -24,13 +24,10 @@ function SideBar() {
   };
 
   useEffect(() => {
-    console.log(location.pathname);
     setSideNum(pageNumber);
-    setSideText(sideText);
-    if (pageNumber === 0) {
-      setSideText(`${location.pathname}`.replace('/', ''));
-      navigate(`${location.pathname}`, { replace: true });
-    } else if (pageNumber === 1) {
+    setSideText(`${location.pathname}`.replace('/', ''));
+    navigate(`${location.pathname}`, { replace: true });
+    if (pageNumber === 1) {
       setSideText('MAINPAGE');
       navigate('/', { replace: true });
     } else if (pageNumber === 2) {
