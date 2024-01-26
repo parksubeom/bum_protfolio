@@ -83,8 +83,8 @@ const UncoverSection = styled.div`
   }
 
   .pj-name {
-    height: 40px;
     font-size: 2.5rem;
+    line-height: 40px;
     font-family: 'Lime';
     margin-top: 15px;
     text-transform: uppercase;
