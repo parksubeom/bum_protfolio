@@ -16,12 +16,12 @@ import UncoverReadme from '../components/project/uncover/Readme';
 import ShootingStar from '../components/animation/ShootingStar';
 
 type BubbleEffectProps = {
-  top?: string;
-  left?: string;
-  right?: string;
-  w?: string;
-  h?: string;
-  second?: string;
+  $top?: string;
+  $right?: string;
+  $left?: string;
+  $w?: string;
+  $h?: string;
+  $second?: string;
 };
 
 const PortfolioPage: React.FC = () => {
@@ -32,6 +32,10 @@ const PortfolioPage: React.FC = () => {
   useEffect(() => {
     // 스크롤 이벤트 처리 함수
     const handleScroll = (event: { deltaY: number }) => {
+      //리드미 페이지에서는 스크롤이벤트로 페이지 이동을 제한.
+      if (location.pathname.split('/').includes('readme')) {
+        return;
+      }
       const pageNumber = event.deltaY > 0 ? 'down' : 'up';
 
       // 10초에 한 번만 스테이트 업데이트
@@ -64,10 +68,10 @@ const PortfolioPage: React.FC = () => {
     <>
       <MainSection className="flex-h-center column">
         <div className="opacity">
-          <BubbleEffect top="-250px" right="50px"></BubbleEffect>
-          <BubbleEffect top="50px" right="-200px" second="7"></BubbleEffect>
-          <BubbleEffect top="500px" left="-150px" second="5"></BubbleEffect>
-          <BubbleEffect top="800px" left="100px" w="400" h="400"></BubbleEffect>
+          <BubbleEffect $top="-250px" $right="50px"></BubbleEffect>
+          <BubbleEffect $top="50px" $right="-200px" $second="7"></BubbleEffect>
+          <BubbleEffect $top="500px" $left="-150px" $second="5"></BubbleEffect>
+          <BubbleEffect $top="800px" $left="100px" $w="400" $h="400"></BubbleEffect>
         </div>
         {!location.pathname.split('/').includes('readme') && <SideBar />}
         <ShootingStar />
@@ -107,16 +111,16 @@ const MainSection = styled.section`
   }
 `;
 
-const BubbleEffect: React.FC<BubbleEffectProps> = styled.div`
+const BubbleEffect: React.FC<BubbleEffectProps> = styled.div<BubbleEffectProps>`
   position: absolute;
-  width: ${props => props.w || '500'}px;
-  height: ${props => props.h || '500'}px;
+  width: ${({ $w }) => $w || '500'}px;
+  height: ${({ $h }) => $h || '500'}px;
   background-color: rgba(202, 100, 14, 0.1);
-  top: ${props => props.top || 'auto'};
-  right: ${props => props.right || 'auto'};
-  left: ${props => props.left || 'auto'};
+  top: ${({ $top }) => $top || 'auto'};
+  $right: ${({ $right }) => $right || 'auto'};
+  $left: ${({ $left }) => $left || 'auto'};
   border-radius: 48%;
-  animation: roundingMotion ${props => props.second || '3'}s infinite linear;
+  animation: roundingMotion ${({ $second }) => $second || '3'}s infinite linear;
 
   @keyframes roundingMotion {
     50% {
