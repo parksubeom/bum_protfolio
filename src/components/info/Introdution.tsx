@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 
 interface IntroductionBoxProps {
   color: string;
-  gauge: number;
+  $gauge: number;
 }
 const Introduction: React.FC = () => {
   const [clickStack] = useRecoilState(useStackDataState);
@@ -29,7 +29,7 @@ const Introduction: React.FC = () => {
       key={clickStack.index}
       className="flex-all-center column"
       color={clickStack.color}
-      gauge={clickStack.gauge}>
+      $gauge={clickStack.gauge}>
       <div className="text-box flex-all-center column">
         <div className="stack-icon">
           {
@@ -75,7 +75,7 @@ const IntroductionBox = styled.div<IntroductionBoxProps>`
     padding: 3px;
 
     .gauge-box {
-      width: ${props => props.gauge || 100}%;
+      width: ${({ $gauge }) => $gauge ?? 100}%;
       height: 100%;
       background-color: var(--text-color);
       border-radius: 30px;

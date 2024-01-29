@@ -34,6 +34,7 @@ const PortfolioPage: React.FC = () => {
     const handleScroll = (event: { deltaY: number }) => {
       //리드미 페이지에서는 스크롤이벤트로 페이지 이동을 제한.
       if (location.pathname.split('/').includes('readme')) {
+        setUpdatingScroll(false);
         return;
       }
       const pageNumber = event.deltaY > 0 ? 'down' : 'up';
@@ -62,7 +63,7 @@ const PortfolioPage: React.FC = () => {
     return () => {
       window.removeEventListener('wheel', handleScroll);
     };
-  }, [updatingScroll]);
+  }, [updatingScroll, location.pathname]);
 
   return (
     <>
@@ -117,8 +118,8 @@ const BubbleEffect: React.FC<BubbleEffectProps> = styled.div<BubbleEffectProps>`
   height: ${({ $h }) => $h || '500'}px;
   background-color: rgba(202, 100, 14, 0.1);
   top: ${({ $top }) => $top || 'auto'};
-  $right: ${({ $right }) => $right || 'auto'};
-  $left: ${({ $left }) => $left || 'auto'};
+  right: ${({ $right }) => $right || 'auto'};
+  left: ${({ $left }) => $left || 'auto'};
   border-radius: 48%;
   animation: roundingMotion ${({ $second }) => $second || '3'}s infinite linear;
 

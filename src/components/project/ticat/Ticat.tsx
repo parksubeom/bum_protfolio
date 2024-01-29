@@ -26,25 +26,25 @@ const Ticat: React.FC = () => {
         <span className="pj-num">PROJECT 01</span>
         <span className="pj-name">전국의 모든 축제를 찾아주는 : TICAT</span>
         <p>
-          다양한 축제 정보를 효과적으로 제공하여 사용자가 쉽고 빠르게 주변의 지역 축제를 찾아볼 수 있도록 도와주는
-          축제안내 서비스입니다. 반응형 css 및 Animation 동작구현 과 함께 전반적인 UI/UX 구축을 담당했으며, kakao map
-          API 를 이용한 지도 안내 서비스 및 메인 페이지, 서칭바, 날씨 API 를 통한 서비스 제공을 도맡아 진행하였습니다.
+          전국에서 진행 또는 예정된 축제를 찾아보거나 캘린더에 등록하고, 다녀와서 스탬프까지 보상으로 제공하는
+          서비스입니다. 반응형 css 및 Animation 동작구현 과 함께 전반적인 UI/UX 구축을 담당했으며, kakao map API 를
+          이용한 지도 안내 서비스 및 상세페이지, 캘린더 페이지, 날씨 API 를 통한 서비스 축제위치 날씨 제공 등을 도맡아
+          진행하였습니다.
         </p>
+        <p>PWA를 통해 빌드해보면서 앞으로 웹 생태계가 뻗어나갈 무한한 가능성과 확장성을 몸소 체감할 수 있었습니다.</p>
         <div>
           {ticatBtn.map((url, idx) => (
-            <PublicButton
+            <button
               key={idx}
               onClick={() => {
                 handleExternalLink(url.url);
               }}>
               {React.createElement(url.icon.component) as React.ReactElement} {url.name}
-            </PublicButton>
+            </button>
           ))}
         </div>
         <div>
-          <PublicButton bgcolor="#222" hover="#222" color="white" onClick={readmeBtnHandle}>
-            자세히보기
-          </PublicButton>
+          <button onClick={readmeBtnHandle}>자세히보기</button>
         </div>
       </div>
     </TicatSection>
@@ -102,8 +102,32 @@ const TicatSection = styled.div`
     word-break: keep-all;
     font-family: 'KopubB';
     width: 65%;
-    margin: 40px 0px 50px 0px;
+    margin: 20px 0px 20px 0px;
     color: var(--main-text-color);
+  }
+
+  button {
+    margin: 15px 15px 0px 0px;
+    font-family: 'KopubB';
+    font-size: 17px;
+    /* color: var(--btn-st-color);
+        border: 1px solid rgb(143, 138, 226, 0.5);
+        background-color: var(--btn-bg-color); */
+    color: #4c4c4c;
+    border: none;
+    background-color: #f1c32b;
+    padding: 7px 25px;
+    border-radius: 5px;
+    transition: 0.3s all ease-in-out;
+    > *:nth-child(1) {
+      margin-right: 5px;
+      transform: translateY(3px);
+    }
+  }
+
+  button:hover {
+    border: 1px solid rgb(143, 138, 226, 0.5);
+    background-color: var(--btn-bg-color);
   }
 
   ul {

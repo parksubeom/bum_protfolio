@@ -75,7 +75,7 @@ const Readme: React.FC = () => {
         <Section>
           <Title>🔍What I learned</Title>
           <Content>
-            <h2>Oauh2로그인 및 로컬 로그인기능 구현 </h2>
+            <h2>Oauth2로그인 및 로컬 로그인기능 구현 </h2>
             <li>
               그동안 수 없이 해온 로그인 인증의 플로우를자세히 알아볼 수 있는 기회였습니다. 또한 프론트엔드와 백엔드
               간의 통합을 위해 API통신, 토큰 교환 등의 작업을 수행함으로써 클라이언트와 서버 간의 협업 방식을 익힐 수

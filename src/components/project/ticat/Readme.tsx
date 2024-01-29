@@ -90,8 +90,8 @@ const Readme: React.FC = () => {
               연결되어 있지 않더라도 캐시된 데이터를 통해 앱을 사용할 수 있도록 했습니다. 또한 CSR렌더링 방식인 리액트의
               특성상 SEO를 최적화 하기위한 노력을 기울여도 검색엔진에 노출되기 쉽지 않기때문에 Next.js를 이용한
               SSR렌더링도 고민했으나 마켓에 출시하여 실제 사용자를 받아보는 방법이 더 좋은 것 같아 PWA를 사용해보게
-              됐습니다. PWA를 통해 빌드해보면서 리액트 네이티브 없이도 앱의 기능 및 장점을 취할 수 있다는점에서 흥미를
-              얻었습니다.
+              됐습니다. PWA를 통해 빌드해보면서 앞으로 웹 생태계가 뻗어나갈 무한한 가능성과 확장성을 몸소 체감할 수
+              있었습니다.
             </li>
           </Content>
         </Section>
@@ -120,7 +120,7 @@ const MainTitleSection = styled.section`
 `;
 
 const Section = styled.section`
-  margin: 15px;
+  margin: 0px 150px;
 `;
 
 const MainTitle = styled.h1`
