@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import SliderShow from '../../slide/SliderShow';
 import { ticatBtn } from '../../../data/urlData';
 import { TicatimageData } from '../../../data/imgData';
-import PublicButton from '../../../common/Button';
+//import PublicButton from '../../../common/Button';
 
 const Ticat: React.FC = () => {
   const navigate = useNavigate();

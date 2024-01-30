@@ -22,7 +22,7 @@ const StackBox = ({ Data, Title }: { Title: string; Data: SkillsData[] }) => {
   const setClickStack = useSetRecoilState(useStackDataState);
   const [indexNum, setIndexNum] = useState(1);
 
-  const handleStack = (index: number, data: any) => {
+  const handleStack = (index: number, data: SkillsData) => {
     setIndexNum(index);
     setClickStack(data);
   };

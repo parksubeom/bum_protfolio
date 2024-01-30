@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { usePageNumberState } from '../state/atoms';
 import React from 'react';
 import MainInfo from '../components/info/MainInfo';
@@ -26,7 +26,7 @@ type BubbleEffectProps = {
 
 const PortfolioPage: React.FC = () => {
   const [updatingScroll, setUpdatingScroll] = useState(false);
-  const [_, setPageNumber] = useRecoilState(usePageNumberState);
+  const setPageNumber = useSetRecoilState(usePageNumberState);
   const location = useLocation();
 
   useEffect(() => {
