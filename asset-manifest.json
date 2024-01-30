@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/bum_protfolio/static/css/main.acb63a3d.css",
+    "main.js": "/bum_protfolio/static/js/main.efd4d5cf.js",
+    "static/js/787.7da95b79.chunk.js": "/bum_protfolio/static/js/787.7da95b79.chunk.js",
+    "static/media/KoPubWorld Light.ttf": "/bum_protfolio/static/media/KoPubWorld Light.c0f3eb97ba023da93dc5.ttf",
+    "static/media/KoPubWorld B.ttf": "/bum_protfolio/static/media/KoPubWorld B.3702d10b68c7a909d6a5.ttf",
+    "static/media/chab.otf": "/bum_protfolio/static/media/chab.d1f9e5a92bee0716427d.otf",
+    "static/media/210lime.otf": "/bum_protfolio/static/media/210lime.3414e8acec98213d28ca.otf",
+    "index.html": "/bum_protfolio/index.html",
+    "main.acb63a3d.css.map": "/bum_protfolio/static/css/main.acb63a3d.css.map",
+    "main.efd4d5cf.js.map": "/bum_protfolio/static/js/main.efd4d5cf.js.map",
+    "787.7da95b79.chunk.js.map": "/bum_protfolio/static/js/787.7da95b79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.acb63a3d.css",
+    "static/js/main.efd4d5cf.js"
+  ]
+}
