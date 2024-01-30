@@ -29,9 +29,4 @@ export const navPramsData: StackData[] = [
     number: 5,
     link: '/anischool',
   },
-  {
-    name: 'END PAGE',
-    number: 6,
-    link: '/endpage',
-  },
 ];

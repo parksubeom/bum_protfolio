@@ -42,8 +42,6 @@ function SideBar() {
     } else if (pageNumber === 5) {
       setSideText('ANISHOOL');
       navigate('/anischool', { replace: true });
-    } else if (pageNumber === 6) {
-      setSideText('ENDPAGE');
     }
 
     if (elementRef.current) {

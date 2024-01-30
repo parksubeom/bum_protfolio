@@ -44,7 +44,7 @@ const PortfolioPage: React.FC = () => {
         setPageNumber(prevScroll => {
           if (pageNumber === 'up' && prevScroll > 1) {
             return prevScroll - 1;
-          } else if (pageNumber === 'down' && prevScroll < 6) {
+          } else if (pageNumber === 'down' && prevScroll < 5) {
             return prevScroll + 1;
           } else {
             return prevScroll;

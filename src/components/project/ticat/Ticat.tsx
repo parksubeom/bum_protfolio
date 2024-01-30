@@ -25,13 +25,17 @@ const Ticat: React.FC = () => {
       <div className="project-info flex-v-center column">
         <span className="pj-num">PROJECT 01</span>
         <span className="pj-name">전국의 모든 축제를 찾아주는 : TICAT</span>
+        <p>2023.09 ~ 2023.11 (5인 프로젝트)</p>
         <p>
           전국에서 진행 또는 예정된 축제를 찾아보거나 캘린더에 등록하고, 다녀와서 스탬프까지 보상으로 제공하는
-          서비스입니다. 반응형 css 및 Animation 동작구현 과 함께 전반적인 UI/UX 구축을 담당했으며, kakao map API 를
-          이용한 지도 안내 서비스 및 상세페이지, 캘린더 페이지, 날씨 API 를 통한 서비스 축제위치 날씨 제공 등을 도맡아
-          진행하였습니다.
+          서비스입니다. <span>반응형 css</span> 및 <span>Animation 동작구현</span>과 함께 전반적인 UI/UX 구축을
+          담당했으며, <span>kakao map API</span> 를 이용한 지도 안내 서비스 및 상세페이지, 캘린더 페이지,{' '}
+          <span>날씨 API</span> 를 통한 서비스 축제위치 날씨 제공 등을 도맡아 진행하였습니다.
         </p>
-        <p>PWA를 통해 빌드해보면서 앞으로 웹 생태계가 뻗어나갈 무한한 가능성과 확장성을 몸소 체감할 수 있었습니다.</p>
+        <p>
+          <span color="red">PWA</span>를 통해 빌드해보면서 앞으로 웹 생태계가 뻗어나갈 무한한 가능성과 확장성을 몸소
+          체감할 수 있었습니다.
+        </p>
         <div>
           {ticatBtn.map((url, idx) => (
             <button
@@ -104,6 +108,10 @@ const TicatSection = styled.div`
     width: 65%;
     margin: 20px 0px 20px 0px;
     color: var(--main-text-color);
+    > span {
+      color: #f65b5b;
+      font-weight: 600;
+    }
   }
 
   button {

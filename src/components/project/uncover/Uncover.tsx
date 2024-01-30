@@ -23,13 +23,15 @@ const Uncover: React.FC = () => {
       <div className="project-info flex-v-center column">
         <span className="pj-num">PROJECT 02</span>
         <span className="pj-name">노 카피라이트 음원 스트리밍 서비스 : Uncover</span>
+        <p>2023.05 ~ 2023.6 (6인 프로젝트)</p>
         <p>
           저작권이 없는 노카피라이트 음원을 스트리밍 할 수 있으며,자신만의 플레이리스트를 만들어서 다른사람들과 공유할
-          수 있는 스트리밍 서비스입니다. 이론만 들어 감이 오지않던 타입스크립트를 직접 도입해 본 첫 프로젝트이며,
-          이외에도 전역상태관리, OAuth 2.0 등의 개념을 한 번 더 깊게 다질 수 있었습니다. 스타일드 컴포넌트를 이용하여
-          재사용성 높은 스타일드컴포넌트를 설계해 볼 수 있었고, 동적 스타일링 및 조건부 스타일링을 경험하면서 좋은
-          UI/UX에 대해 고민하는 계기도 되었습니다. 어떤 기능을 구현하냐보다, 사용자의 사용성에 집중해보며 유저친화적인
-          서비스를 설계하기위해 고민할 수 있었던 좋은 기회였다고 생각합니다.
+          수 있는 스트리밍 서비스입니다. 이론만 들어 감이 오지않던 <span>타입스크립트</span>를 직접 도입해 본 첫
+          프로젝트이며, 이외에도 전역상태관리, <span>OAuth 2.0</span> 등의 개념을 한 번 더 깊게 다질 수 있었습니다.
+          스타일드 컴포넌트를 이용하여 <span>재사용성 높은 스타일드컴포넌트를 설계</span>를 해 볼 수 있었고,{' '}
+          <span>동적 스타일링 및 조건부 스타일링</span>을 경험하면서 좋은 UI/UX에 대해 고민하는 계기도 되었습니다. 어떤
+          기능을 구현하냐보다, 사용자의 사용성에 집중해보며 유저친화적인 서비스를 설계하기위해 고민할 수 있었던 좋은
+          기회였다고 생각합니다.
         </p>
         <div>
           {uncoverBtn.map((url, idx) => (
@@ -85,8 +87,8 @@ const UncoverSection = styled.div`
   }
 
   .pj-name {
+    height: 40px;
     font-size: 2.5rem;
-    line-height: 40px;
     font-family: 'Lime';
     margin-top: 15px;
     text-transform: uppercase;
@@ -101,8 +103,12 @@ const UncoverSection = styled.div`
     word-break: keep-all;
     font-family: 'KopubB';
     width: 65%;
-    margin: 40px 0px 50px 0px;
+    margin: 20px 0px 20px 0px;
     color: var(--main-text-color);
+    > span {
+      color: #f65b5b;
+      font-weight: 600;
+    }
   }
 
   button {

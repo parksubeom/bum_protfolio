@@ -1,7 +1,7 @@
 import React from 'react';
 import { CgFigma } from 'react-icons/cg';
 import { BiLogoDiscord } from 'react-icons/bi';
-import { SiNotion, SiPostman, SiAmazonaws, SiGithub } from 'react-icons/si';
+import { SiNotion, SiPostman, SiGithub } from 'react-icons/si';
 
 type IconType = {
   component: React.ComponentType<{ color: string }>;

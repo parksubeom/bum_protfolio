@@ -6,9 +6,9 @@ import StackBox from './StackBox';
 const Stack: React.FC = () => {
   return (
     <>
-      <StackBox Data={skillsData} />
-      <StackBox Data={deploymentData} />
-      <StackBox Data={communicationData} />
+      <StackBox Title="Skills" Data={skillsData} />
+      <StackBox Title="DeployMent" Data={deploymentData} />
+      <StackBox Title="Communication" Data={communicationData} />
     </>
   );
 };

@@ -18,7 +18,7 @@ type SkillsData = {
   gauge: number;
 };
 
-const StackBox = ({ Data }: { Data: SkillsData[] }) => {
+const StackBox = ({ Data, Title }: { Title: string; Data: SkillsData[] }) => {
   const setClickStack = useSetRecoilState(useStackDataState);
   const [indexNum, setIndexNum] = useState(1);
 
@@ -29,7 +29,7 @@ const StackBox = ({ Data }: { Data: SkillsData[] }) => {
   return (
     <div>
       <StackBoxComponent>
-        <h2>Skills</h2>
+        <h2>{Title}</h2>
         <StackContent className="flex-h-center">
           {Data &&
             Data.map(item => (

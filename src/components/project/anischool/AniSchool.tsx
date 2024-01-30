@@ -23,13 +23,15 @@ const AniSchool: React.FC = () => {
       <div className="project-info flex-v-center column">
         <span className="pj-num">PROJECT 03</span>
         <span className="pj-name">귀여운 동물 프로필 생성기 : AniSchool</span>
+        <p>2023.02 ~ 2023.03 (2인 프로젝트)</p>
         <p>
           프로필 업로드에 얼굴을 공개하기 꺼려워하는 사람들을 위한 서비스로, 귀여운 동물 이미지를 생성하는
           프로젝트입니다. 프론트엔드 개발과 캐릭터 디자인 기획에 참여하여, 랜덤 요소 적용, 레어 요소 설정, 이미지 저장
-          등의 기능을 구현했습니다. 주요 개발과정은 블로그에 공유되어 있으며, 프로젝트를 통해 SEO를 제외한 전반적인 성능
-          최적화를 진행했습니다. 코드 최적화와 리소스 최적화를 통해 라이트하우스 성능 개선을 달성하고, 사용자 중심의
-          디자인을 강조하며 프로젝트 성과로는 200명 이상의 실제 사용자 경험과 37건의 피드백, 유지보수 경험을 얻었습니다.
-          특히, 사용자 입장에서의 개발 고민을 통해 팀원과의 커뮤니케이션과 고객 니즈 파악의 중요성을 깨달았습니다.
+          등의 기능을 구현했습니다. 주요 개발과정은 블로그에 공유되어 있으며,{' '}
+          <span>프로젝트를 통해 전반적인 성능 최적화</span>를 진행했습니다. 코드 최적화와 리소스 최적화를 통해
+          <span>라이트하우스 성능 개선</span>을 달성하고, 사용자 중심의 디자인을 강조하며 프로젝트 성과로는{' '}
+          <span>200명 이상의 실제 사용자 경험과 37건의 피드백, 유지보수 경험</span>을 얻었습니다. 특히, 사용자
+          입장에서의 개발 고민을 통해 <span>팀원과의 커뮤니케이션</span>과 고객 니즈 파악의 중요성을 깨달았습니다.
         </p>
         <div>
           {anischoolBtn.map((url, idx) => (
@@ -101,8 +103,12 @@ const AniSchoolSection = styled.div`
     word-break: keep-all;
     font-family: 'KopubB';
     width: 65%;
-    margin: 40px 0px 50px 0px;
-    color: var(--main-texㅉt-color);
+    margin: 20px 0px 20px 0px;
+    color: var(--main-text-color);
+    > span {
+      color: #f65b5b;
+      font-weight: 600;
+    }
   }
 
   button {
