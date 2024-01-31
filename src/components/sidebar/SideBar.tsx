@@ -107,6 +107,15 @@ const SideBarSection = styled.nav`
     background: linear-gradient(to right bottom, var(--main-color) 10%, var(--sub-color));
     color: transparent;
     -webkit-background-clip: text;
+
+    @media (max-width: 1440px) {
+      /* 1024px 이하일 때의 스타일 */
+      font-size: 50px;
+    }
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      display: none;
+    }
   }
 
   @keyframes changeNum {
@@ -185,6 +194,10 @@ const NavBtn = styled.div`
       transform: rotate(90deg) translateX(0px);
     }
   }
+  @media (max-width: 1024px) {
+    /* 1024px 이하일 때의 스타일 */
+    display: none; /* 비활성화 */
+  }
 `;
 const MouseIcon = styled.div`
   width: 100%;
@@ -243,5 +256,9 @@ const MouseIcon = styled.div`
     50% {
       opacity: 0;
     }
+  }
+  @media (max-width: 1024px) {
+    /* 1024px 이하일 때의 스타일 */
+    display: none; /* 비활성화 */
   }
 `;

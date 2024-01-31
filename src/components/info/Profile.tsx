@@ -24,6 +24,8 @@ const Profile: React.FC = () => {
 export default Profile;
 
 const ProfileSection = styled.article`
+  display: flex;
+
   z-index: 1;
   width: 80%;
   height: 100vh;

@@ -35,17 +35,16 @@ const AniSchool: React.FC = () => {
         </p>
         <div>
           {anischoolBtn.map((url, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                handleExternalLink(url.url);
-              }}>
-              {React.createElement(url.icon.component) as React.ReactElement} {url.name}
-            </button>
+            <BtnSection key={idx}>
+              <button
+                onClick={() => {
+                  handleExternalLink(url.url);
+                }}>
+                {React.createElement(url.icon.component) as React.ReactElement} {url.name}
+              </button>
+              {idx === anischoolBtn.length - 1 && <button onClick={readmeBtnHandle}>자세히보기</button>}
+            </BtnSection>
           ))}
-        </div>
-        <div>
-          <button onClick={readmeBtnHandle}>자세히보기</button>
         </div>
       </div>
     </AniSchoolSection>
@@ -53,6 +52,11 @@ const AniSchool: React.FC = () => {
 };
 
 export default AniSchool;
+
+const BtnSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const AniSchoolSection = styled.div`
   width: 100%;
@@ -84,19 +88,34 @@ const AniSchoolSection = styled.div`
     font-size: 2.3rem;
     font-family: 'Lime';
     color: var(--main-color);
+
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      font-size: 1.5rem; /* 비활성화 */
+      height: 100%;
+    }
   }
 
   .pj-name {
-    height: 40px;
-    font-size: 2.5rem;
+    height: 50px;
+    font-size: 2rem;
     font-family: 'Lime';
     margin-top: 15px;
     text-transform: uppercase;
     padding-top: 10px;
-
     background: linear-gradient(to right bottom, var(--main-color), var(--sub-color) 60%);
     color: transparent;
     -webkit-background-clip: text;
+    @media (max-width: 1660px) {
+      /* 1024px 이하일 때의 스타일 */
+      font-size: 1%.7;
+      height: 100%;
+    }
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      font-size: 1.5rem;
+      height: 100%;
+    }
   }
 
   p {
@@ -109,9 +128,14 @@ const AniSchoolSection = styled.div`
       color: #f65b5b;
       font-weight: 600;
     }
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      width: 100%;
+    }
   }
 
   button {
+    width: 50%;
     margin: 15px 15px 0px 0px;
     font-family: 'KopubB';
     font-size: 17px;
@@ -127,6 +151,10 @@ const AniSchoolSection = styled.div`
     > *:nth-child(1) {
       margin-right: 5px;
       transform: translateY(3px);
+    }
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      width: 100%;
     }
   }
 

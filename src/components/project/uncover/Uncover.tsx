@@ -35,17 +35,16 @@ const Uncover: React.FC = () => {
         </p>
         <div>
           {uncoverBtn.map((url, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                handleExternalLink(url.url);
-              }}>
-              {React.createElement(url.icon.component) as React.ReactElement} {url.name}
-            </button>
+            <BtnSection key={idx}>
+              <button
+                onClick={() => {
+                  handleExternalLink(url.url);
+                }}>
+                {React.createElement(url.icon.component) as React.ReactElement} {url.name}
+              </button>
+              {idx === uncoverBtn.length - 1 && <button onClick={readmeBtnHandle}>자세히보기</button>}
+            </BtnSection>
           ))}
-        </div>
-        <div>
-          <button onClick={readmeBtnHandle}>자세히보기</button>
         </div>
       </div>
     </UncoverSection>
@@ -53,6 +52,11 @@ const Uncover: React.FC = () => {
 };
 
 export default Uncover;
+
+const BtnSection = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const UncoverSection = styled.div`
   width: 100%;
@@ -81,24 +85,37 @@ const UncoverSection = styled.div`
   }
 
   .pj-num {
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     font-family: 'Lime';
     color: var(--main-color);
+
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      font-size: 1.5rem; /* 비활성화 */
+    }
   }
 
   .pj-name {
-    height: 40px;
-    font-size: 2.5rem;
+    height: 100px;
+    font-size: 2rem;
     font-family: 'Lime';
     margin-top: 15px;
     text-transform: uppercase;
     padding-top: 10px;
-
     background: linear-gradient(to right bottom, var(--main-color), var(--sub-color) 60%);
     color: transparent;
     -webkit-background-clip: text;
+    @media (max-width: 1660px) {
+      /* 1024px 이하일 때의 스타일 */
+      font-size: 1.7rem;
+      height: 100%;
+    }
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      font-size: 1.5rem;
+      height: 100%;
+    }
   }
-
   p {
     word-break: keep-all;
     font-family: 'KopubB';
@@ -109,9 +126,14 @@ const UncoverSection = styled.div`
       color: #f65b5b;
       font-weight: 600;
     }
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      width: 100%;
+    }
   }
 
   button {
+    width: 50%;
     margin: 15px 15px 0px 0px;
     font-family: 'KopubB';
     font-size: 17px;
@@ -127,6 +149,10 @@ const UncoverSection = styled.div`
     > *:nth-child(1) {
       margin-right: 5px;
       transform: translateY(3px);
+    }
+    @media (max-width: 1024px) {
+      /* 1024px 이하일 때의 스타일 */
+      width: 100%;
     }
   }
 
