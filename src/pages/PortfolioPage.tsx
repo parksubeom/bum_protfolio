@@ -32,12 +32,23 @@ const PortfolioPage: React.FC = () => {
   useEffect(() => {
     // 스크롤 이벤트 처리 함수
     const handleScroll = (event: { deltaY: number }) => {
+      const isAtTop = window.scrollY === 0;
+      const isAtBottom = window.scrollY + window.innerHeight === document.documentElement.scrollHeight;
+      const pageNumber = event.deltaY > 0 ? 'down' : 'up';
+      if (isAtTop || isAtBottom) {
+        // 최상단에 도달한 경우
+        setPageNumber(prevScroll => prevScroll - 1);
+      }
+
+      if (isAtBottom) {
+        // 최하단에 도달한 경우
+        setPageNumber(prevScroll => prevScroll + 1);
+      }
       //리드미 페이지에서는 스크롤이벤트로 페이지 이동을 제한.
       if (location.pathname.split('/').includes('readme')) {
         setUpdatingScroll(false);
         return;
       }
-      const pageNumber = event.deltaY > 0 ? 'down' : 'up';
 
       // 10초에 한 번만 스테이트 업데이트
       if (!updatingScroll) {

@@ -25,13 +25,20 @@ export default Profile;
 
 const ProfileSection = styled.article`
   display: flex;
-
   z-index: 1;
   width: 80%;
   height: 100vh;
   margin-right: 100px;
   opacity: 0;
   color: var(--main-text-color);
+
+  @media (max-width: 1440px) {
+    /* 1024px 이하일 때의 스타일 */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 50px;
+  }
 
   animation: showup 1s 0s forwards;
   @keyframes showup {

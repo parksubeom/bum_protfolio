@@ -97,6 +97,10 @@ const SideBarSection = styled.nav`
   animation: sidebarshowup 1s forwards;
   opacity: 0;
   z-index: 3;
+  @media (max-width: 1024px) {
+    /* 1024px 이하일 때의 스타일 */
+    display: none;
+  }
 
   .page-numbering {
     width: 100%;

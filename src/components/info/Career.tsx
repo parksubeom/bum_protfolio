@@ -79,14 +79,25 @@ const CareerSection = styled.article`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  @media (max-width: 1440px) {
+    /* 1024px 이하일 때의 스타일 */
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    margin: 0;
+    > div {
+      margin: 50 30px;
+    }
+  }
 
   .category-name {
     font-size: 20px;
   }
-
-  h2 {
-    font-size: 20px;
-    margin-top: 50px;
+  @media (min-width: 1440px) {
+    h2 {
+      font-size: 20px;
+      margin-top: 50px;
+    }
   }
 `;
 
