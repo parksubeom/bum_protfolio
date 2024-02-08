@@ -107,7 +107,6 @@ const SideBarSection = styled.nav`
     height: 120px;
     font-family: '촵';
     font-size: 70px;
-
     background: linear-gradient(to right bottom, var(--main-color) 10%, var(--sub-color));
     color: transparent;
     -webkit-background-clip: text;

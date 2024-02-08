@@ -19,13 +19,13 @@ const Button: React.FC<BtnProps> = ({ children, ...props }) => {
 
 export default Button;
 
-/** 2023/06/29 - 서비스 공용 버튼 컴포넌트 - parksubeom */
+/** 2024/01/26 - 서비스 공용 버튼 컴포넌트 - parksubeom */
 const PublicButton = styled.button<
   Pick<BtnProps, '$width' | '$height' | '$fontSize' | '$margin' | '$color' | '$bgcolor' | '$hover'>
 >`
   font-family: KopubB;
-  width: ${({ $width }) => $width ?? '15rem'};
-  height: ${({ $height }) => $height ?? '3rem'};
+  width: ${({ $width }) => $width ?? '50%'};
+  height: ${({ $height }) => $height ?? 'auto'};
   font-size: ${({ $fontSize }) => $fontSize ?? '18px'};
   border-radius: 5px;
   border: none;
@@ -37,6 +37,6 @@ const PublicButton = styled.button<
   font-weight: bold;
   cursor: pointer;
   &:hover {
-    background-color: ${({ $hover }) => $hover ?? 'var(--btn-bg-color'};
+    background-color: ${({ $hover }) => $hover ?? 'var(--btn-bg-color)'};
   }
 `;

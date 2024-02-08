@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import SliderShow from '../../slide/SliderShow';
 import { ticatBtn } from '../../../data/urlData';
 import { TicatimageData } from '../../../data/imgData';
-//import PublicButton from '../../../common/Button';
+import Button from '../../../common/Button';
 
 const Ticat: React.FC = () => {
   const navigate = useNavigate();
@@ -36,20 +36,20 @@ const Ticat: React.FC = () => {
           <span color="red">PWA</span>를 통해 빌드해보면서 앞으로 웹 생태계가 뻗어나갈 무한한 가능성과 확장성을 몸소
           체감할 수 있었습니다.
         </p>
-        <div>
-          {ticatBtn.map((url, idx) => (
-            <BtnSection>
-              <button
-                key={idx}
-                onClick={() => {
-                  handleExternalLink(url.url);
-                }}>
-                {React.createElement(url.icon.component) as React.ReactElement} {url.name}
-              </button>
-              {idx === ticatBtn.length - 1 && <button onClick={readmeBtnHandle}>자세히보기</button>}
-            </BtnSection>
+        <BtnSection>
+          {ticatBtn.map(url => (
+            <Button
+              key={url.name}
+              onClick={() => {
+                handleExternalLink(url.url);
+              }}>
+              {React.createElement(url.icon.component) as React.ReactElement} {url.name}
+            </Button>
           ))}
-        </div>
+          <Button $color="#ddd" $bgcolor="black" onClick={readmeBtnHandle}>
+            자세히보기
+          </Button>
+        </BtnSection>
       </div>
     </TicatSection>
   );
@@ -134,35 +134,6 @@ const TicatSection = styled.div`
       /* 1024px 이하일 때의 스타일 */
       width: 100%;
     }
-  }
-
-  button {
-    width: 50%;
-    margin: 15px 15px 0px 0px;
-    font-family: 'KopubB';
-    font-size: 17px;
-    /* color: var(--btn-st-color);
-        border: 1px solid rgb(143, 138, 226, 0.5);
-        background-color: var(--btn-bg-color); */
-    color: #4c4c4c;
-    border: none;
-    background-color: #f1c32b;
-    padding: 7px 25px;
-    border-radius: 5px;
-    transition: 0.3s all ease-in-out;
-    > *:nth-child(1) {
-      margin-right: 5px;
-      transform: translateY(3px);
-    }
-    @media (max-width: 1024px) {
-      /* 1024px 이하일 때의 스타일 */
-      width: 100%;
-    }
-  }
-
-  button:hover {
-    border: 1px solid rgb(143, 138, 226, 0.5);
-    background-color: var(--btn-bg-color);
   }
 
   ul {

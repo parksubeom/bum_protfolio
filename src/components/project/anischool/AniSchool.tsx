@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SliderShow from '../../slide/SliderShow';
 import { anischoolBtn } from '../../../data/urlData';
 import { AniSchoolimageData } from '../../../data/imgData';
+import Button from '../../../common/Button';
 
 const AniSchool: React.FC = () => {
   const navigate = useNavigate();
@@ -36,13 +37,17 @@ const AniSchool: React.FC = () => {
         <div>
           {anischoolBtn.map((url, idx) => (
             <BtnSection key={idx}>
-              <button
+              <Button
                 onClick={() => {
                   handleExternalLink(url.url);
                 }}>
                 {React.createElement(url.icon.component) as React.ReactElement} {url.name}
-              </button>
-              {idx === anischoolBtn.length - 1 && <button onClick={readmeBtnHandle}>자세히보기</button>}
+              </Button>
+              {idx === anischoolBtn.length - 1 && (
+                <Button $color="#ddd" $bgcolor="black" onClick={readmeBtnHandle}>
+                  자세히보기
+                </Button>
+              )}
             </BtnSection>
           ))}
         </div>
@@ -133,36 +138,6 @@ const AniSchoolSection = styled.div`
       width: 100%;
     }
   }
-
-  button {
-    width: 50%;
-    margin: 15px 15px 0px 0px;
-    font-family: 'KopubB';
-    font-size: 17px;
-    /* color: var(--btn-st-color);
-        border: 1px solid rgb(143, 138, 226, 0.5);
-        background-color: var(--btn-bg-color); */
-    color: #4c4c4c;
-    border: none;
-    background-color: #f1c32b;
-    padding: 7px 25px;
-    border-radius: 5px;
-    transition: 0.3s all ease-in-out;
-    > *:nth-child(1) {
-      margin-right: 5px;
-      transform: translateY(3px);
-    }
-    @media (max-width: 1024px) {
-      /* 1024px 이하일 때의 스타일 */
-      width: 100%;
-    }
-  }
-
-  button:hover {
-    border: 1px solid rgb(143, 138, 226, 0.5);
-    background-color: var(--btn-bg-color);
-  }
-
   ul {
     width: 500px;
     display: flex;
