@@ -58,32 +58,34 @@ function SideBar() {
   }, [pageNumber]);
 
   return (
-    <SideBarSection className="flex-all-center column">
-      <div ref={elementRef} className="page-numbering flex-all-center">
-        <p>0{pageNumber}</p>
-      </div>
-      <NavBtn className="flex-all-center column">
-        <span ref={nameRef} className="page-text">
-          {sideText}
-        </span>
-        <div className="nav-line"></div>
-        {navPramsData.map((nav, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              handlenavigate(nav.link, nav.number, nav.name);
-            }}
-            className={nav.number === sideNum ? 'click-nav-btn' : 'null'}></button>
-        ))}
-      </NavBtn>
-      <MouseIcon className="flex-all-center column">
-        <div className="arrow-up"></div>
-        <div className="mouse-body">
-          <div className="mouse-wheel"></div>
+    <>
+      <SideBarSection className="flex-all-center column">
+        <div ref={elementRef} className="page-numbering flex-all-center">
+          <p>0{pageNumber}</p>
         </div>
-        <div className="arrow-down"></div>
-      </MouseIcon>
-    </SideBarSection>
+        <NavBtn className="flex-all-center column">
+          <span ref={nameRef} className="page-text">
+            {sideText}
+          </span>
+          <div className="nav-line"></div>
+          {navPramsData.map((nav, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                handlenavigate(nav.link, nav.number, nav.name);
+              }}
+              className={nav.number === sideNum ? 'click-nav-btn' : 'null'}></button>
+          ))}
+        </NavBtn>
+        <MouseIcon className="flex-all-center column">
+          <div className="arrow-up"></div>
+          <div className="mouse-body">
+            <div className="mouse-wheel"></div>
+          </div>
+          <div className="arrow-down"></div>
+        </MouseIcon>
+      </SideBarSection>
+    </>
   );
 }
 
@@ -97,10 +99,6 @@ const SideBarSection = styled.nav`
   animation: sidebarshowup 1s forwards;
   opacity: 0;
   z-index: 3;
-  @media (max-width: 1024px) {
-    /* 1024px 이하일 때의 스타일 */
-    display: none;
-  }
 
   .page-numbering {
     width: 100%;
@@ -117,7 +115,7 @@ const SideBarSection = styled.nav`
     }
     @media (max-width: 1024px) {
       /* 1024px 이하일 때의 스타일 */
-      display: none;
+      font-size: 30px;
     }
   }
 
@@ -147,7 +145,18 @@ const NavBtn = styled.div`
   position: relative;
   width: 100%;
   height: 60%;
-
+  @media (max-width: 1024px) {
+    /* 1024px 이하일 때의 스타일 */
+    .nav-line {
+      display: none;
+    }
+    & > button {
+      display: none;
+    }
+    & > span {
+      display: none;
+    }
+  }
   .nav-line {
     position: absolute;
     width: 2px;
@@ -196,10 +205,6 @@ const NavBtn = styled.div`
       opacity: 0.5;
       transform: rotate(90deg) translateX(0px);
     }
-  }
-  @media (max-width: 1024px) {
-    /* 1024px 이하일 때의 스타일 */
-    display: none; /* 비활성화 */
   }
 `;
 const MouseIcon = styled.div`

@@ -24,6 +24,9 @@ const PublicButton = styled.button<
   Pick<BtnProps, '$width' | '$height' | '$fontSize' | '$margin' | '$color' | '$bgcolor' | '$hover'>
 >`
   font-family: KopubB;
+  @media (max-width: 1240px) {
+    width: 85%;
+  }
   width: ${({ $width }) => $width ?? '50%'};
   height: ${({ $height }) => $height ?? 'auto'};
   font-size: ${({ $fontSize }) => $fontSize ?? '18px'};

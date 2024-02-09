@@ -30,51 +30,45 @@ const PortfolioPage: React.FC = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // 스크롤 이벤트 처리 함수
-    const handleScroll = (event: { deltaY: number }) => {
-      const isAtTop = window.scrollY === 0;
-      const isAtBottom = window.scrollY + window.innerHeight === document.documentElement.scrollHeight;
-      const pageNumber = event.deltaY > 0 ? 'down' : 'up';
-      if (isAtTop || isAtBottom) {
-        // 최상단에 도달한 경우
-        setPageNumber(prevScroll => prevScroll - 1);
-      }
+    let timeoutId: NodeJS.Timeout;
 
-      if (isAtBottom) {
-        // 최하단에 도달한 경우
-        setPageNumber(prevScroll => prevScroll + 1);
-      }
-      //리드미 페이지에서는 스크롤이벤트로 페이지 이동을 제한.
-      if (location.pathname.split('/').includes('readme')) {
-        setUpdatingScroll(false);
-        return;
-      }
+    const handleScroll = (event: WheelEvent) => {
+      clearTimeout(timeoutId); // 기존의 setTimeout을 클리어합니다.
 
-      // 10초에 한 번만 스테이트 업데이트
-      if (!updatingScroll) {
-        setPageNumber(prevScroll => {
-          if (pageNumber === 'up' && prevScroll > 1) {
-            return prevScroll - 1;
-          } else if (pageNumber === 'down' && prevScroll < 5) {
-            return prevScroll + 1;
-          } else {
-            return prevScroll;
-          }
-        });
+      // setTimeout을 사용하여 페이지 이동 로직을 1.5초 지연시킵니다.
+      timeoutId = setTimeout(() => {
+        const pageNumber = event.deltaY > 0 ? 'down' : 'up';
+        const isAtTop = window.scrollY === 0;
+        const isAtBottom = window.scrollY + window.innerHeight === document.documentElement.scrollHeight;
 
-        setUpdatingScroll(true);
+        // 리드미 페이지에서는 스크롤 이벤트로 페이지 이동을 제한.
+        if (location.pathname.split('/').includes('readme')) {
+          return;
+        }
 
-        // 10초 후에 다시 업데이트 허용
-        setTimeout(() => {
-          setUpdatingScroll(false);
-        }, 1000);
-      }
+        // 스크롤이 맨 위 또는 맨 아래에 있는 경우에만 페이지 전환
+        if ((pageNumber === 'up' && isAtTop) || (pageNumber === 'down' && isAtBottom)) {
+          setPageNumber(prevScroll => {
+            if (pageNumber === 'up' && prevScroll > 1) {
+              return prevScroll - 1;
+            } else if (pageNumber === 'down' && prevScroll < 5) {
+              return prevScroll + 1;
+            } else {
+              return prevScroll;
+            }
+          });
+        }
+      }, 250); // 1.5초의 딜레이
     };
+
     window.addEventListener('wheel', handleScroll);
+
+    // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
     return () => {
       window.removeEventListener('wheel', handleScroll);
+      clearTimeout(timeoutId); // 컴포넌트가 언마운트될 때 timeout을 클리어합니다.
     };
-  }, [updatingScroll, location.pathname]);
+  }, [location.pathname]);
 
   return (
     <>
