@@ -51,7 +51,9 @@ const SliderSection = styled.div`
     border-radius: 30px;
     overflow: hidden;
     transition: 0.3s all ease-in-out;
-
+    @media (min-width: 1024px) {
+      display: none;
+    }
     > img {
       height: 100%;
       object-fit: cover;

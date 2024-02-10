@@ -93,8 +93,7 @@ const TicatSection = styled.div`
     color: var(--main-color);
 
     @media (max-width: 1024px) {
-      /* 1024px 이하일 때의 스타일 */
-      font-size: 1.5rem; /* 비활성화 */
+      font-size: 1.5rem;
     }
   }
 
