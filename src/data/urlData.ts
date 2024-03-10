@@ -51,7 +51,7 @@ export const anischoolBtn: ButtonData[] = [
   {
     name: 'Service Link',
     icon: { component: FaPlay },
-    url: 'https://d12v3b538m291m.cloudfront.net',
+    url: 'https://parksubeom.github.io/Project_RetroAnimal_Generator/',
   },
   {
     name: 'Git Hub',
